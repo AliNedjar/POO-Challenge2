@@ -13,7 +13,7 @@ class Truck extends Vehicle
     /**
      * @var int
      */
-    private $actualCharge;
+    private $actualCharge = 0;
 
     /**
      * @var string
@@ -60,11 +60,15 @@ class Truck extends Vehicle
         $this->stockageCapacity = $stockageCapacity;
     }
 
-    public function Fill()
+    public function ChargingInfo()
     {
-        if ($this->getActualCharge() < $this->getStockageCapacity()) {
-            $this->setActualCharge($this->setStockageCapacity());
+        $infoMessage = '';
+        if ($this->actualCharge === $this->stockageCapacity) {
+            $infoMessage = 'The truck is full';
+        } else {
+            $infoMessage = 'The truck can still be filled';
         }
+        return $infoMessage;
     }
 
 
