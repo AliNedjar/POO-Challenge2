@@ -10,3 +10,7 @@ echo $optimusPrime->forward();
 echo $optimusPrime->brake();
 
 var_dump($optimusPrime);
+
+$optimusPrime->setStockageCapacity(25);
+
+echo $optimusPrime->ChargingInfo();
